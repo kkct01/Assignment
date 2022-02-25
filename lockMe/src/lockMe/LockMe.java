@@ -36,7 +36,7 @@ public class LockMe {
 		String contents[] = pwd.list(filter);
 		
 		Scanner scanner = new Scanner(System.in);
-		
+				
 		while (true) {
 		
 		System.out.println("\nWhat do you want to do?\n"
@@ -45,6 +45,7 @@ public class LockMe {
 				+ "(3) Quit");
 		String selection1 = scanner.nextLine();
 		
+		outer:
 		switch(selection1) {
 			
 			case "1": //List all files in the directory
@@ -69,7 +70,6 @@ public class LockMe {
 							
 			case "2": //More options
 				
-				inner:
 				while (true) {
 								
 				System.out.println("\nPlease select an operation:\n"
@@ -135,8 +135,8 @@ public class LockMe {
 					continue;
 					
 				case "4": //Return to the top
-					break inner;
-					
+					break outer;
+										
 				default:
 					System.out.println("\nPlease enter a valid choice!");
 					continue;
